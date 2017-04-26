@@ -1,0 +1,423 @@
+// Progress Circle
+// Author: Willem Luijt <willem.luijt@endertech.com>
+// Inspired by: http://blog.invatechs.com/round_progress_bar_with_html5_css3_and_javascript
+
+//  <div class="progress-circle" data-progress="65">
+//    <div class="progress-circle-bg">
+//      <div class="text">65%</div>
+//    </div>
+//    <div class="bar-quadrant quadrant-0-25-a">
+//      <div class="bar-quadrant-inner quadrant-0-25-b">
+//        <div class="bar"></div>
+//      </div>
+//    </div>
+//    <div class="bar-quadrant quadrant-25-50-a">
+//      <div class="bar-quadrant-inner quadrant-25-50-b">
+//        <div class="bar"></div>
+//      </div>
+//    </div>
+//    <div class="bar-quadrant quadrant-50-75-a">
+//      <div class="bar-quadrant-inner quadrant-50-75-b">
+//        <div class="bar"></div>
+//      </div>
+//    </div>
+//    <div class="bar-quadrant quadrant-75-100-a">
+//      <div class="bar-quadrant-inner quadrant-75-100-b">
+//        <div class="bar"></div>
+//      </div>
+//    </div>
+//  </div>
+
+
+
+//@import "../../../../../../vendor/twbs/bootstrap/less/variables.less";
+//@import "../../../../../../vendor/twbs/bootstrap/less/mixins.less";
+
+
+// Vendor Variables
+// -------------------------
+
+@baseFontSize:          14px;
+@baseLineHeight:        20px;
+
+
+// Vendor Mixins
+// -------------------------
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.size(@height, @width) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size, @size);
+}
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+}
+
+
+
+// Variables
+// -------------------------
+
+@progressCircleSize: 50px;
+@progressCircleBorderSize: 5px;
+@progressCircleBorderEmptyColor: rgba(255, 255, 255, 0.1);
+@progressCircleBorderFillColor: rgba(255, 255, 255, 0.3);
+@progressCircleTextColor: @progressCircleBorderFillColor;
+
+
+// Mixins
+// -------------------------
+
+.origin(@origin) {
+  -webkit-transform-origin: @origin;
+     -moz-transform-origin: @origin;
+      -ms-transform-origin: @origin;
+       -o-transform-origin: @origin;
+          transform-origin: @origin;
+}
+
+.progressCircleTextSize(@multiplier: 1, @offset: 0, @textLines: 1)
+{
+  // Vertically center the text given @progressCircleSize
+  padding: (((@progressCircleSize * @multiplier) - ((@progressCircleBorderSize * @multiplier) * 2) - (@baseLineHeight * @multiplier) - (@offset * 2)) / 2) 0;
+  font-size: (@baseFontSize * @multiplier);
+  line-height: ((@baseLineHeight / @textLines) * @multiplier);
+}
+
+.progressCircleSize(@multiplier: 1, @offset: 0, @textLines: 1)
+{
+  .square((@progressCircleSize * @multiplier));
+
+  .progress-circle-bg,
+  .bar
+  {
+    border-width: (@progressCircleBorderSize * @multiplier);
+  }
+
+  .text
+  {
+    .progressCircleTextSize(@multiplier, @offset, @textLines);
+  }
+}
+
+.progressCircleColor(@background: transparent, @empty: @progressCircleBorderEmptyColor, @fill: @progressCircleBorderFillColor, @text: @progressCircleTextColor)
+{
+  .progress-circle-bg
+  {
+    background-color: @background;
+    border-color: @empty;
+  }
+
+  .bar
+  {
+    border-color: @fill;
+  }
+
+  .text
+  {
+    color: @text;
+  }
+}
+
+
+
+// Progress Circle
+// -------------------------
+
+.progress-circle
+{
+  .box-sizing(border-box);
+  .square(@progressCircleSize);
+  .user-select(none);
+
+  position: relative;
+
+  .progress-circle-bg
+  {
+    .border-radius(50%);
+    .box-sizing(border-box);
+    .square(100%);
+
+    border: @progressCircleBorderSize solid @progressCircleBorderEmptyColor;
+  }
+
+  .text
+  {
+    .progressCircleTextSize();
+
+    color: @progressCircleTextColor;
+    text-align: center;
+  }
+
+  .bar-quadrant
+  {
+    .box-sizing(border-box);
+    .origin(100% 100%);
+    .square(50%);
+
+    background: transparent;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .bar-quadrant-inner
+  {
+    .box-sizing(border-box);
+    .origin(100% 100%);
+    .square(100%);
+
+    background: transparent;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .bar
+  {
+    .border-radius(50%);
+    .box-sizing(border-box);
+    .square(200%);
+
+    border: @progressCircleBorderSize solid @progressCircleBorderFillColor;
+  }
+
+  // Rotate the quadrants to their initial positions
+
+  .quadrant-0-25-a
+  {
+    .rotate(90deg);
+  }
+
+  .quadrant-25-50-a
+  {
+    .rotate(180deg);
+  }
+
+  .quadrant-50-75-a
+  {
+    .rotate(270deg);
+  }
+
+  .quadrant-75-100-a
+  {
+    .rotate(0deg);
+  }
+
+  .quadrant-0-25-b,
+  .quadrant-25-50-b,
+  .quadrant-50-75-b,
+  .quadrant-75-100-b
+  {
+    .rotate(-90deg);
+  }
+}
+
+
+
+// Calculate the angles for each data-progress value from 0 to 100
+
+.progressCircleX (@index) when (@index >= 0) and (@index < 25) {
+  @quote: '"';
+  @selector: ~".progress-circle[data-progress=@{quote}@{index}@{quote}]";
+
+  @{selector}
+  {
+    .progressCircle0-25(@index);
+  }
+
+  .progressCircleX(@index - 1);
+}
+.progressCircleX (@index) when (@index >= 25) and (@index < 50) {
+  @quote: '"';
+  @selector: ~".progress-circle[data-progress=@{quote}@{index}@{quote}]";
+
+  @{selector}
+  {
+    .progressCircle25-50(@index);
+  }
+
+  .progressCircleX(@index - 1);
+}
+.progressCircleX (@index) when (@index >= 50) and (@index < 75) {
+  @quote: '"';
+  @selector: ~".progress-circle[data-progress=@{quote}@{index}@{quote}]";
+
+  @{selector}
+  {
+    .progressCircle50-75(@index);
+  }
+
+  .progressCircleX(@index - 1);
+}
+.progressCircleX (@index) when (@index >= 75) and (@index < 100) {
+  @quote: '"';
+  @selector: ~".progress-circle[data-progress=@{quote}@{index}@{quote}]";
+
+  @{selector}
+  {
+    .progressCircle75-100(@index);
+  }
+
+  .progressCircleX(@index - 1);
+}
+.progressCircleX (@index) when (@index = 100) {
+  @quote: '"';
+  @selector: ~".progress-circle[data-progress=@{quote}@{index}@{quote}]";
+
+  @{selector}
+  {
+    .progressCircle75-100(@index);
+  }
+
+  .progressCircleX(@index - 1);
+}
+
+.progressCircle0-25 (@index) {
+  @angle: (-90 + ((@index / 100) * 360));
+  @angleValue: ~"@{angle}deg";
+
+  .quadrant-0-25-b
+  {
+    .rotate(@angleValue);
+  }
+}
+
+.progressCircle25-50 (@index) {
+  @angle: (-90 + (((@index - 25) / 100) * 360));
+  @angleValue: ~"@{angle}deg";
+
+  .quadrant-0-25-b
+  {
+    //.rotate(0deg); // set by .fillQuadrantX
+  }
+
+  .quadrant-25-50-b
+  {
+    .rotate(@angleValue);
+  }
+}
+
+.progressCircle50-75 (@index) {
+  @angle: (-90 + (((@index - 50) / 100) * 360));
+  @angleValue: ~"@{angle}deg";
+
+  .quadrant-0-25-b,
+  .quadrant-25-50-b
+  {
+    //.rotate(0deg); // set by .fillQuadrantX
+  }
+
+  .quadrant-50-75-b
+  {
+    .rotate(@angleValue);
+  }
+}
+
+.progressCircle75-100 (@index) {
+  @angle: (-90 + (((@index - 75) / 100) * 360));
+  @angleValue: ~"@{angle}deg";
+
+  .quadrant-0-25-b,
+  .quadrant-25-50-b,
+  .quadrant-50-75-b
+  {
+    //.rotate(0deg); // set by .fillQuadrantX
+  }
+
+  .quadrant-75-100-b
+  {
+    .rotate(@angleValue);
+  }
+}
+
+// generate the progress angles
+.progressCircleX(100);
+
+
+
+// Create a single selector with all of the progress elements that need filled quadrants
+
+.fillQuadrantX (@fillSelector, @index) when (@index = 0) {
+  // output the single selector at the end
+  @{fillSelector}
+  {
+    .rotate(0deg);
+  }
+}
+.fillQuadrantX (@fillSelector, @index) when (@index > 0) and (@index < 25) {
+  .fillQuadrantX(@fillSelector, @index - 1);
+}
+.fillQuadrantX (@fillSelector, @index) when (@index >= 25) and (@index < 50) {
+  @quote: '"';
+  @fillSelectorA: ~"@{fillSelector}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-0-25-b";
+  .fillQuadrantX(@fillSelectorA, @index - 1);
+}
+.fillQuadrantX (@fillSelector, @index) when (@index >= 50) and (@index < 75) {
+  @quote: '"';
+  @fillSelectorA: ~"@{fillSelector}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-0-25-b";
+  @fillSelectorB: ~"@{fillSelectorA}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-25-50-b";
+  .fillQuadrantX(@fillSelectorB, @index - 1);
+}
+.fillQuadrantX (@fillSelector, @index) when (@index >= 75) and (@index < 100) {
+  @quote: '"';
+  @fillSelectorA: ~"@{fillSelector}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-0-25-b";
+  @fillSelectorB: ~"@{fillSelectorA}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-25-50-b";
+  @fillSelectorC: ~"@{fillSelectorB}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-50-75-b";
+  .fillQuadrantX(@fillSelectorC, @index - 1);
+}
+.fillQuadrantX (@fillSelector, @index) when (@index = 100) {
+  @quote: '"';
+  @fillSelectorA: ~".progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-0-25-b";
+  @fillSelectorB: ~"@{fillSelectorA}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-25-50-b";
+  @fillSelectorC: ~"@{fillSelectorB}, .progress-circle[data-progress=@{quote}@{index}@{quote}] .quadrant-50-75-b";
+  .fillQuadrantX(@fillSelectorC, @index - 1);
+}
+
+// generate the fill quadrant selector
+.fillQuadrantX('', 100);
+
+
+
+// Sizes
+// -------------------------
+
+.progress-circle-small
+{
+  .progressCircleSize(1);
+}
+
+.progress-circle-medium
+{
+  .progressCircleSize(2);
+}
+
+.progress-circle-large
+{
+  .progressCircleSize(3);
+}
