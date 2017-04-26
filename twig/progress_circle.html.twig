@@ -1,0 +1,27 @@
+{# the "// 1" will floor the value #}
+{% set progress = percent|default(0) // 1 %}
+<div class="progress-circle{% if container_class|default('') %} {{ container_class }}{% endif %}" data-progress="{% if progress > 100 %}100{% elseif progress < 0 %}0{% else %}{{ progress }}{% endif %}">
+    <div class="progress-circle-bg">
+        <div class="text">{% if progress_text is defined %}{{ progress_text }}{% else %}{{ progress }}%{% endif %}</div>
+    </div>
+    <div class="bar-quadrant quadrant-0-25-a">
+        <div class="bar-quadrant-inner quadrant-0-25-b">
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div class="bar-quadrant quadrant-25-50-a">
+        <div class="bar-quadrant-inner quadrant-25-50-b">
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div class="bar-quadrant quadrant-50-75-a">
+        <div class="bar-quadrant-inner quadrant-50-75-b">
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div class="bar-quadrant quadrant-75-100-a">
+        <div class="bar-quadrant-inner quadrant-75-100-b">
+            <div class="bar"></div>
+        </div>
+    </div>
+</div>
