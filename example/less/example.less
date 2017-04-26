@@ -1,0 +1,77 @@
+//@import "../../../../../../vendor/twbs/bootstrap/less/variables.less";
+//@import "../../../../../../vendor/twbs/bootstrap/less/mixins.less";
+
+// Vendor Variables
+// -------------------------
+
+@white:                 #fff;
+@blue:                  #049cdb;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+
+
+// Import the library
+// -------------------------
+
+@import "../../less/progress-circle.less";
+
+
+// Progress Circle Examples
+// -------------------------
+
+.progress-circle-value-example-1
+{
+  .progressCircleColor(transparent, transparent, @blue, @orange);
+
+  .text
+  {
+    .border-radius(50%);
+
+    background-color: @white;
+    border: 5px solid @yellow;
+    font-weight: bold;
+    margin: 4px;
+  }
+
+  &.progress-circle-large
+  {
+    .progressCircleSize(3, (5px + 4px));
+
+    .text
+    {
+      font-size: (@baseFontSize * 2);
+    }
+  }
+}
+
+.progress-circle-color-example-1
+{
+  .progressCircleColor(@blue, @red, @green, @yellow);
+}
+
+.progress-circle-text-size-example-1
+{
+  .progressCircleColor(transparent, transparent, @orange, @orange);
+
+  .text
+  {
+    .border-radius(50%);
+
+    background-color: @white;
+    border: 5px solid @green;
+    font-weight: bold;
+    margin: 4px;
+  }
+
+  &.progress-circle-large
+  {
+    .progressCircleSize(4, (5px + 4px), 3); // for the third parameter, the text in the element wraps to 3 lines
+
+    .text
+    {
+      font-size: (@baseFontSize * 1.75);
+    }
+  }
+}

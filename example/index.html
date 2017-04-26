@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress Circle Examples</title>
+    <link rel="stylesheet" href="css/example.css">
+    <style type="text/css">
+        .sizes .progress-circle {
+            background-color: black;
+        }
+
+        .colors .progress-circle {
+            display: inline-block;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('.progress-circle-value-example-1').each(function () {
+                demoProgress($(this));
+            });
+
+            function demoProgress(element) {
+                var iterations = 100;
+
+                function demoProgressLoop(progress) {
+                    element.attr('data-progress', progress);
+                    element.find('.text').html(progress + '%');
+
+                    if (progress < iterations) {
+                        setTimeout(function () {
+                            demoProgressLoop(progress + 1);
+                        }, 250);
+                    } else {
+                        setTimeout(function () {
+                            demoProgressLoop(0);
+                        }, 3000);
+                    }
+                }
+
+                demoProgressLoop(0);
+            }
+        });
+    </script>
+</head>
+<body>
+<h1>Progress Circle Examples</h1>
+
+<div class="values">
+    <h2>Values</h2>
+    <p>Like any progress bar, the circle can display values from 0 to 100. This example uses javascript to update the
+        <code>data-progress</code> attribute and related <code>.text</code> element content only. The rest of the
+        display is handled by the CSS.</p>
+
+    <div class="progress-circle progress-circle-large progress-circle-value-example-1" data-progress="0">
+        <div class="progress-circle-bg">
+            <div class="text">0%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>The example above uses the following LESS code:</p>
+    <pre>
+    .progress-circle-value-example-1
+    {
+      .progressCircleColor(transparent, transparent, @blue, @orange);
+
+      .text
+      {
+        .border-radius(50%);
+
+        background-color: @white;
+        border: 5px solid @yellow;
+        font-weight: bold;
+        margin: 4px;
+      }
+
+      &.progress-circle-large
+      {
+        .progressCircleSize(3, (5px + 4px));
+
+        .text
+        {
+          font-size: (@baseFontSize * 2);
+        }
+      }
+    }
+    </pre>
+    <p>The CSS output would look like the following:</p>
+    <pre>
+    .progress-circle-value-example-1 .progress-circle-bg {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .progress-circle-value-example-1 .bar {
+      border-color: #049cdb;
+    }
+    .progress-circle-value-example-1 .text {
+      color: #f89406;
+    }
+    .progress-circle-value-example-1 .text {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 5px solid #ffc40d;
+      font-weight: bold;
+      margin: 4px;
+    }
+    .progress-circle-value-example-1.progress-circle-large {
+      width: 150px;
+      height: 150px;
+    }
+    .progress-circle-value-example-1.progress-circle-large .progress-circle-bg,
+    .progress-circle-value-example-1.progress-circle-large .bar {
+      border-width: 15px;
+    }
+    .progress-circle-value-example-1.progress-circle-large .text {
+      padding: 21px 0;
+      font-size: 42px;
+      line-height: 60px;
+    }
+    .progress-circle-value-example-1.progress-circle-large .text {
+      font-size: 28px;
+    }
+    </pre>
+
+</div>
+
+<div class="sizes">
+    <h2>Sizes</h2>
+    <p>No additional CSS has been applied to these size examples. The progress circles are displayed on a black
+        background to display the default colors.</p>
+
+    <p>Default</p>
+
+    <div class="progress-circle" data-progress="65">
+        <div class="progress-circle-bg">
+            <div class="text">65%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>Small (CSS class: <code>progress-circle-small</code>)</p>
+
+    <div class="progress-circle progress-circle-small" data-progress="65">
+        <div class="progress-circle-bg">
+            <div class="text">65%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>Medium (CSS class: <code>progress-circle-medium</code>)</p>
+
+    <div class="progress-circle progress-circle-medium" data-progress="65">
+        <div class="progress-circle-bg">
+            <div class="text">65%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>Large (CSS class: <code>progress-circle-large</code>)</p>
+
+    <div class="progress-circle progress-circle-large" data-progress="65">
+        <div class="progress-circle-bg">
+            <div class="text">65%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- .sizes -->
+
+<div class="colors">
+    <h2>Colors</h2>
+    <p>With the LESS mixin <code>.progressCircleColor()</code>, you can easily generate the CSS structure used to modify
+        the colors.</p>
+
+    <div class="progress-circle progress-circle-medium progress-circle-color-example-1" data-progress="0">
+        <div class="progress-circle-bg">
+            <div class="text">0%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-circle progress-circle-medium progress-circle-color-example-1" data-progress="17">
+        <div class="progress-circle-bg">
+            <div class="text">17%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-circle progress-circle-medium progress-circle-color-example-1" data-progress="42">
+        <div class="progress-circle-bg">
+            <div class="text">42%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-circle progress-circle-medium progress-circle-color-example-1" data-progress="65">
+        <div class="progress-circle-bg">
+            <div class="text">65%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-circle progress-circle-medium progress-circle-color-example-1" data-progress="88">
+        <div class="progress-circle-bg">
+            <div class="text">88%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-circle progress-circle-medium progress-circle-color-example-1" data-progress="100">
+        <div class="progress-circle-bg">
+            <div class="text">100%</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>The examples above use the following LESS code:</p>
+    <pre>
+    .progress-circle-color-example-1
+    {
+      .progressCircleColor(@blue, @red, @green, @yellow);
+    }
+    </pre>
+    <p>The CSS output would look like the following:</p>
+    <pre>
+    .progress-circle-color-example-1 .progress-circle-bg {
+      background-color: #049cdb;
+      border-color: #9d261d;
+    }
+    .progress-circle-color-example-1 .bar {
+      border-color: #46a546;
+    }
+    .progress-circle-color-example-1 .text {
+      color: #ffc40d;
+    }
+    </pre>
+
+</div><!-- .colors -->
+
+<div class="text-size">
+    <h2>Text Size</h2>
+    <p>With the LESS mixin <code>.progressCircleSize()</code>, you can adjust the circle size if you needed to place a
+        bit of text that displays in several lines.</p>
+
+    <div class="progress-circle progress-circle-large progress-circle-text-size-example-1" data-progress="65">
+        <div class="progress-circle-bg">
+            <div class="text">There are several lines of text here</div>
+        </div>
+        <div class="bar-quadrant quadrant-0-25-a">
+            <div class="bar-quadrant-inner quadrant-0-25-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-25-50-a">
+            <div class="bar-quadrant-inner quadrant-25-50-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-50-75-a">
+            <div class="bar-quadrant-inner quadrant-50-75-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="bar-quadrant quadrant-75-100-a">
+            <div class="bar-quadrant-inner quadrant-75-100-b">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>The example above uses the following LESS code:</p>
+    <pre>
+    .progress-circle-text-size-example-1
+    {
+      .progressCircleColor(transparent, transparent, @orange, @orange);
+
+      .text
+      {
+        .border-radius(50%);
+
+        background-color: @white;
+        border: 5px solid @green;
+        font-weight: bold;
+        margin: 4px;
+      }
+
+      &.progress-circle-large
+      {
+        .progressCircleSize(4, (5px + 4px), 3); // for the third parameter, the text in the element wraps to 3 lines
+
+        .text
+        {
+          font-size: (@baseFontSize * 1.75);
+        }
+      }
+    }
+    </pre>
+    <p>The CSS output would look like the following:</p>
+    <pre>
+    .progress-circle-text-size-example-1 .progress-circle-bg {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .progress-circle-text-size-example-1 .bar {
+      border-color: #f89406;
+    }
+    .progress-circle-text-size-example-1 .text {
+      color: #f89406;
+    }
+    .progress-circle-text-size-example-1 .text {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 5px solid #46a546;
+      font-weight: bold;
+      margin: 4px;
+    }
+    .progress-circle-text-size-example-1.progress-circle-large {
+      width: 200px;
+      height: 200px;
+    }
+    .progress-circle-text-size-example-1.progress-circle-large .progress-circle-bg,
+    .progress-circle-text-size-example-1.progress-circle-large .bar {
+      border-width: 20px;
+    }
+    .progress-circle-text-size-example-1.progress-circle-large .text {
+      padding: 31px 0;
+      font-size: 56px;
+      line-height: 26.66666667px;
+    }
+    .progress-circle-text-size-example-1.progress-circle-large .text {
+      font-size: 24.5px;
+    }
+    </pre>
+
+</div><!-- .text-size -->
+
+</body>
+</html>
