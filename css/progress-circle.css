@@ -1,0 +1,867 @@
+.progress-circle {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  position: relative;
+}
+.progress-circle .progress-circle-bg {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+}
+.progress-circle .text {
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+.progress-circle .bar-quadrant {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  width: 50%;
+  height: 50%;
+  background: transparent;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress-circle .bar-quadrant-inner {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress-circle .bar {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+}
+.progress-circle .quadrant-0-25-a {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.progress-circle .quadrant-25-50-a {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.progress-circle .quadrant-50-75-a {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.progress-circle .quadrant-75-100-a {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.progress-circle .quadrant-0-25-b,
+.progress-circle .quadrant-25-50-b,
+.progress-circle .quadrant-50-75-b,
+.progress-circle .quadrant-75-100-b {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.progress-circle[data-progress="100"] .quadrant-75-100-b {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.progress-circle[data-progress="99"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-3.6000000000000085deg);
+  -moz-transform: rotate(-3.6000000000000085deg);
+  -ms-transform: rotate(-3.6000000000000085deg);
+  -o-transform: rotate(-3.6000000000000085deg);
+  transform: rotate(-3.6000000000000085deg);
+}
+.progress-circle[data-progress="98"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-7.200000000000003deg);
+  -moz-transform: rotate(-7.200000000000003deg);
+  -ms-transform: rotate(-7.200000000000003deg);
+  -o-transform: rotate(-7.200000000000003deg);
+  transform: rotate(-7.200000000000003deg);
+}
+.progress-circle[data-progress="97"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-10.799999999999997deg);
+  -moz-transform: rotate(-10.799999999999997deg);
+  -ms-transform: rotate(-10.799999999999997deg);
+  -o-transform: rotate(-10.799999999999997deg);
+  transform: rotate(-10.799999999999997deg);
+}
+.progress-circle[data-progress="96"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-14.400000000000006deg);
+  -moz-transform: rotate(-14.400000000000006deg);
+  -ms-transform: rotate(-14.400000000000006deg);
+  -o-transform: rotate(-14.400000000000006deg);
+  transform: rotate(-14.400000000000006deg);
+}
+.progress-circle[data-progress="95"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-18deg);
+  -moz-transform: rotate(-18deg);
+  -ms-transform: rotate(-18deg);
+  -o-transform: rotate(-18deg);
+  transform: rotate(-18deg);
+}
+.progress-circle[data-progress="94"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-21.599999999999994deg);
+  -moz-transform: rotate(-21.599999999999994deg);
+  -ms-transform: rotate(-21.599999999999994deg);
+  -o-transform: rotate(-21.599999999999994deg);
+  transform: rotate(-21.599999999999994deg);
+}
+.progress-circle[data-progress="93"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-25.200000000000003deg);
+  -moz-transform: rotate(-25.200000000000003deg);
+  -ms-transform: rotate(-25.200000000000003deg);
+  -o-transform: rotate(-25.200000000000003deg);
+  transform: rotate(-25.200000000000003deg);
+}
+.progress-circle[data-progress="92"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-28.799999999999997deg);
+  -moz-transform: rotate(-28.799999999999997deg);
+  -ms-transform: rotate(-28.799999999999997deg);
+  -o-transform: rotate(-28.799999999999997deg);
+  transform: rotate(-28.799999999999997deg);
+}
+.progress-circle[data-progress="91"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-32.4deg);
+  -moz-transform: rotate(-32.4deg);
+  -ms-transform: rotate(-32.4deg);
+  -o-transform: rotate(-32.4deg);
+  transform: rotate(-32.4deg);
+}
+.progress-circle[data-progress="90"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-36deg);
+  -moz-transform: rotate(-36deg);
+  -ms-transform: rotate(-36deg);
+  -o-transform: rotate(-36deg);
+  transform: rotate(-36deg);
+}
+.progress-circle[data-progress="89"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-39.599999999999994deg);
+  -moz-transform: rotate(-39.599999999999994deg);
+  -ms-transform: rotate(-39.599999999999994deg);
+  -o-transform: rotate(-39.599999999999994deg);
+  transform: rotate(-39.599999999999994deg);
+}
+.progress-circle[data-progress="88"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-43.199999999999996deg);
+  -moz-transform: rotate(-43.199999999999996deg);
+  -ms-transform: rotate(-43.199999999999996deg);
+  -o-transform: rotate(-43.199999999999996deg);
+  transform: rotate(-43.199999999999996deg);
+}
+.progress-circle[data-progress="87"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-46.800000000000004deg);
+  -moz-transform: rotate(-46.800000000000004deg);
+  -ms-transform: rotate(-46.800000000000004deg);
+  -o-transform: rotate(-46.800000000000004deg);
+  transform: rotate(-46.800000000000004deg);
+}
+.progress-circle[data-progress="86"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-50.4deg);
+  -moz-transform: rotate(-50.4deg);
+  -ms-transform: rotate(-50.4deg);
+  -o-transform: rotate(-50.4deg);
+  transform: rotate(-50.4deg);
+}
+.progress-circle[data-progress="85"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-54deg);
+  -moz-transform: rotate(-54deg);
+  -ms-transform: rotate(-54deg);
+  -o-transform: rotate(-54deg);
+  transform: rotate(-54deg);
+}
+.progress-circle[data-progress="84"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-57.6deg);
+  -moz-transform: rotate(-57.6deg);
+  -ms-transform: rotate(-57.6deg);
+  -o-transform: rotate(-57.6deg);
+  transform: rotate(-57.6deg);
+}
+.progress-circle[data-progress="83"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-61.2deg);
+  -moz-transform: rotate(-61.2deg);
+  -ms-transform: rotate(-61.2deg);
+  -o-transform: rotate(-61.2deg);
+  transform: rotate(-61.2deg);
+}
+.progress-circle[data-progress="82"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-64.8deg);
+  -moz-transform: rotate(-64.8deg);
+  -ms-transform: rotate(-64.8deg);
+  -o-transform: rotate(-64.8deg);
+  transform: rotate(-64.8deg);
+}
+.progress-circle[data-progress="81"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-68.4deg);
+  -moz-transform: rotate(-68.4deg);
+  -ms-transform: rotate(-68.4deg);
+  -o-transform: rotate(-68.4deg);
+  transform: rotate(-68.4deg);
+}
+.progress-circle[data-progress="80"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-72deg);
+  -moz-transform: rotate(-72deg);
+  -ms-transform: rotate(-72deg);
+  -o-transform: rotate(-72deg);
+  transform: rotate(-72deg);
+}
+.progress-circle[data-progress="79"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-75.6deg);
+  -moz-transform: rotate(-75.6deg);
+  -ms-transform: rotate(-75.6deg);
+  -o-transform: rotate(-75.6deg);
+  transform: rotate(-75.6deg);
+}
+.progress-circle[data-progress="78"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-79.2deg);
+  -moz-transform: rotate(-79.2deg);
+  -ms-transform: rotate(-79.2deg);
+  -o-transform: rotate(-79.2deg);
+  transform: rotate(-79.2deg);
+}
+.progress-circle[data-progress="77"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-82.8deg);
+  -moz-transform: rotate(-82.8deg);
+  -ms-transform: rotate(-82.8deg);
+  -o-transform: rotate(-82.8deg);
+  transform: rotate(-82.8deg);
+}
+.progress-circle[data-progress="76"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-86.4deg);
+  -moz-transform: rotate(-86.4deg);
+  -ms-transform: rotate(-86.4deg);
+  -o-transform: rotate(-86.4deg);
+  transform: rotate(-86.4deg);
+}
+.progress-circle[data-progress="75"] .quadrant-75-100-b {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.progress-circle[data-progress="74"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-3.6000000000000085deg);
+  -moz-transform: rotate(-3.6000000000000085deg);
+  -ms-transform: rotate(-3.6000000000000085deg);
+  -o-transform: rotate(-3.6000000000000085deg);
+  transform: rotate(-3.6000000000000085deg);
+}
+.progress-circle[data-progress="73"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-7.200000000000003deg);
+  -moz-transform: rotate(-7.200000000000003deg);
+  -ms-transform: rotate(-7.200000000000003deg);
+  -o-transform: rotate(-7.200000000000003deg);
+  transform: rotate(-7.200000000000003deg);
+}
+.progress-circle[data-progress="72"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-10.799999999999997deg);
+  -moz-transform: rotate(-10.799999999999997deg);
+  -ms-transform: rotate(-10.799999999999997deg);
+  -o-transform: rotate(-10.799999999999997deg);
+  transform: rotate(-10.799999999999997deg);
+}
+.progress-circle[data-progress="71"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-14.400000000000006deg);
+  -moz-transform: rotate(-14.400000000000006deg);
+  -ms-transform: rotate(-14.400000000000006deg);
+  -o-transform: rotate(-14.400000000000006deg);
+  transform: rotate(-14.400000000000006deg);
+}
+.progress-circle[data-progress="70"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-18deg);
+  -moz-transform: rotate(-18deg);
+  -ms-transform: rotate(-18deg);
+  -o-transform: rotate(-18deg);
+  transform: rotate(-18deg);
+}
+.progress-circle[data-progress="69"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-21.599999999999994deg);
+  -moz-transform: rotate(-21.599999999999994deg);
+  -ms-transform: rotate(-21.599999999999994deg);
+  -o-transform: rotate(-21.599999999999994deg);
+  transform: rotate(-21.599999999999994deg);
+}
+.progress-circle[data-progress="68"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-25.200000000000003deg);
+  -moz-transform: rotate(-25.200000000000003deg);
+  -ms-transform: rotate(-25.200000000000003deg);
+  -o-transform: rotate(-25.200000000000003deg);
+  transform: rotate(-25.200000000000003deg);
+}
+.progress-circle[data-progress="67"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-28.799999999999997deg);
+  -moz-transform: rotate(-28.799999999999997deg);
+  -ms-transform: rotate(-28.799999999999997deg);
+  -o-transform: rotate(-28.799999999999997deg);
+  transform: rotate(-28.799999999999997deg);
+}
+.progress-circle[data-progress="66"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-32.4deg);
+  -moz-transform: rotate(-32.4deg);
+  -ms-transform: rotate(-32.4deg);
+  -o-transform: rotate(-32.4deg);
+  transform: rotate(-32.4deg);
+}
+.progress-circle[data-progress="65"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-36deg);
+  -moz-transform: rotate(-36deg);
+  -ms-transform: rotate(-36deg);
+  -o-transform: rotate(-36deg);
+  transform: rotate(-36deg);
+}
+.progress-circle[data-progress="64"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-39.599999999999994deg);
+  -moz-transform: rotate(-39.599999999999994deg);
+  -ms-transform: rotate(-39.599999999999994deg);
+  -o-transform: rotate(-39.599999999999994deg);
+  transform: rotate(-39.599999999999994deg);
+}
+.progress-circle[data-progress="63"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-43.199999999999996deg);
+  -moz-transform: rotate(-43.199999999999996deg);
+  -ms-transform: rotate(-43.199999999999996deg);
+  -o-transform: rotate(-43.199999999999996deg);
+  transform: rotate(-43.199999999999996deg);
+}
+.progress-circle[data-progress="62"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-46.800000000000004deg);
+  -moz-transform: rotate(-46.800000000000004deg);
+  -ms-transform: rotate(-46.800000000000004deg);
+  -o-transform: rotate(-46.800000000000004deg);
+  transform: rotate(-46.800000000000004deg);
+}
+.progress-circle[data-progress="61"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-50.4deg);
+  -moz-transform: rotate(-50.4deg);
+  -ms-transform: rotate(-50.4deg);
+  -o-transform: rotate(-50.4deg);
+  transform: rotate(-50.4deg);
+}
+.progress-circle[data-progress="60"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-54deg);
+  -moz-transform: rotate(-54deg);
+  -ms-transform: rotate(-54deg);
+  -o-transform: rotate(-54deg);
+  transform: rotate(-54deg);
+}
+.progress-circle[data-progress="59"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-57.6deg);
+  -moz-transform: rotate(-57.6deg);
+  -ms-transform: rotate(-57.6deg);
+  -o-transform: rotate(-57.6deg);
+  transform: rotate(-57.6deg);
+}
+.progress-circle[data-progress="58"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-61.2deg);
+  -moz-transform: rotate(-61.2deg);
+  -ms-transform: rotate(-61.2deg);
+  -o-transform: rotate(-61.2deg);
+  transform: rotate(-61.2deg);
+}
+.progress-circle[data-progress="57"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-64.8deg);
+  -moz-transform: rotate(-64.8deg);
+  -ms-transform: rotate(-64.8deg);
+  -o-transform: rotate(-64.8deg);
+  transform: rotate(-64.8deg);
+}
+.progress-circle[data-progress="56"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-68.4deg);
+  -moz-transform: rotate(-68.4deg);
+  -ms-transform: rotate(-68.4deg);
+  -o-transform: rotate(-68.4deg);
+  transform: rotate(-68.4deg);
+}
+.progress-circle[data-progress="55"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-72deg);
+  -moz-transform: rotate(-72deg);
+  -ms-transform: rotate(-72deg);
+  -o-transform: rotate(-72deg);
+  transform: rotate(-72deg);
+}
+.progress-circle[data-progress="54"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-75.6deg);
+  -moz-transform: rotate(-75.6deg);
+  -ms-transform: rotate(-75.6deg);
+  -o-transform: rotate(-75.6deg);
+  transform: rotate(-75.6deg);
+}
+.progress-circle[data-progress="53"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-79.2deg);
+  -moz-transform: rotate(-79.2deg);
+  -ms-transform: rotate(-79.2deg);
+  -o-transform: rotate(-79.2deg);
+  transform: rotate(-79.2deg);
+}
+.progress-circle[data-progress="52"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-82.8deg);
+  -moz-transform: rotate(-82.8deg);
+  -ms-transform: rotate(-82.8deg);
+  -o-transform: rotate(-82.8deg);
+  transform: rotate(-82.8deg);
+}
+.progress-circle[data-progress="51"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-86.4deg);
+  -moz-transform: rotate(-86.4deg);
+  -ms-transform: rotate(-86.4deg);
+  -o-transform: rotate(-86.4deg);
+  transform: rotate(-86.4deg);
+}
+.progress-circle[data-progress="50"] .quadrant-50-75-b {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.progress-circle[data-progress="49"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-3.6000000000000085deg);
+  -moz-transform: rotate(-3.6000000000000085deg);
+  -ms-transform: rotate(-3.6000000000000085deg);
+  -o-transform: rotate(-3.6000000000000085deg);
+  transform: rotate(-3.6000000000000085deg);
+}
+.progress-circle[data-progress="48"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-7.200000000000003deg);
+  -moz-transform: rotate(-7.200000000000003deg);
+  -ms-transform: rotate(-7.200000000000003deg);
+  -o-transform: rotate(-7.200000000000003deg);
+  transform: rotate(-7.200000000000003deg);
+}
+.progress-circle[data-progress="47"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-10.799999999999997deg);
+  -moz-transform: rotate(-10.799999999999997deg);
+  -ms-transform: rotate(-10.799999999999997deg);
+  -o-transform: rotate(-10.799999999999997deg);
+  transform: rotate(-10.799999999999997deg);
+}
+.progress-circle[data-progress="46"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-14.400000000000006deg);
+  -moz-transform: rotate(-14.400000000000006deg);
+  -ms-transform: rotate(-14.400000000000006deg);
+  -o-transform: rotate(-14.400000000000006deg);
+  transform: rotate(-14.400000000000006deg);
+}
+.progress-circle[data-progress="45"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-18deg);
+  -moz-transform: rotate(-18deg);
+  -ms-transform: rotate(-18deg);
+  -o-transform: rotate(-18deg);
+  transform: rotate(-18deg);
+}
+.progress-circle[data-progress="44"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-21.599999999999994deg);
+  -moz-transform: rotate(-21.599999999999994deg);
+  -ms-transform: rotate(-21.599999999999994deg);
+  -o-transform: rotate(-21.599999999999994deg);
+  transform: rotate(-21.599999999999994deg);
+}
+.progress-circle[data-progress="43"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-25.200000000000003deg);
+  -moz-transform: rotate(-25.200000000000003deg);
+  -ms-transform: rotate(-25.200000000000003deg);
+  -o-transform: rotate(-25.200000000000003deg);
+  transform: rotate(-25.200000000000003deg);
+}
+.progress-circle[data-progress="42"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-28.799999999999997deg);
+  -moz-transform: rotate(-28.799999999999997deg);
+  -ms-transform: rotate(-28.799999999999997deg);
+  -o-transform: rotate(-28.799999999999997deg);
+  transform: rotate(-28.799999999999997deg);
+}
+.progress-circle[data-progress="41"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-32.4deg);
+  -moz-transform: rotate(-32.4deg);
+  -ms-transform: rotate(-32.4deg);
+  -o-transform: rotate(-32.4deg);
+  transform: rotate(-32.4deg);
+}
+.progress-circle[data-progress="40"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-36deg);
+  -moz-transform: rotate(-36deg);
+  -ms-transform: rotate(-36deg);
+  -o-transform: rotate(-36deg);
+  transform: rotate(-36deg);
+}
+.progress-circle[data-progress="39"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-39.599999999999994deg);
+  -moz-transform: rotate(-39.599999999999994deg);
+  -ms-transform: rotate(-39.599999999999994deg);
+  -o-transform: rotate(-39.599999999999994deg);
+  transform: rotate(-39.599999999999994deg);
+}
+.progress-circle[data-progress="38"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-43.199999999999996deg);
+  -moz-transform: rotate(-43.199999999999996deg);
+  -ms-transform: rotate(-43.199999999999996deg);
+  -o-transform: rotate(-43.199999999999996deg);
+  transform: rotate(-43.199999999999996deg);
+}
+.progress-circle[data-progress="37"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-46.800000000000004deg);
+  -moz-transform: rotate(-46.800000000000004deg);
+  -ms-transform: rotate(-46.800000000000004deg);
+  -o-transform: rotate(-46.800000000000004deg);
+  transform: rotate(-46.800000000000004deg);
+}
+.progress-circle[data-progress="36"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-50.4deg);
+  -moz-transform: rotate(-50.4deg);
+  -ms-transform: rotate(-50.4deg);
+  -o-transform: rotate(-50.4deg);
+  transform: rotate(-50.4deg);
+}
+.progress-circle[data-progress="35"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-54deg);
+  -moz-transform: rotate(-54deg);
+  -ms-transform: rotate(-54deg);
+  -o-transform: rotate(-54deg);
+  transform: rotate(-54deg);
+}
+.progress-circle[data-progress="34"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-57.6deg);
+  -moz-transform: rotate(-57.6deg);
+  -ms-transform: rotate(-57.6deg);
+  -o-transform: rotate(-57.6deg);
+  transform: rotate(-57.6deg);
+}
+.progress-circle[data-progress="33"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-61.2deg);
+  -moz-transform: rotate(-61.2deg);
+  -ms-transform: rotate(-61.2deg);
+  -o-transform: rotate(-61.2deg);
+  transform: rotate(-61.2deg);
+}
+.progress-circle[data-progress="32"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-64.8deg);
+  -moz-transform: rotate(-64.8deg);
+  -ms-transform: rotate(-64.8deg);
+  -o-transform: rotate(-64.8deg);
+  transform: rotate(-64.8deg);
+}
+.progress-circle[data-progress="31"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-68.4deg);
+  -moz-transform: rotate(-68.4deg);
+  -ms-transform: rotate(-68.4deg);
+  -o-transform: rotate(-68.4deg);
+  transform: rotate(-68.4deg);
+}
+.progress-circle[data-progress="30"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-72deg);
+  -moz-transform: rotate(-72deg);
+  -ms-transform: rotate(-72deg);
+  -o-transform: rotate(-72deg);
+  transform: rotate(-72deg);
+}
+.progress-circle[data-progress="29"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-75.6deg);
+  -moz-transform: rotate(-75.6deg);
+  -ms-transform: rotate(-75.6deg);
+  -o-transform: rotate(-75.6deg);
+  transform: rotate(-75.6deg);
+}
+.progress-circle[data-progress="28"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-79.2deg);
+  -moz-transform: rotate(-79.2deg);
+  -ms-transform: rotate(-79.2deg);
+  -o-transform: rotate(-79.2deg);
+  transform: rotate(-79.2deg);
+}
+.progress-circle[data-progress="27"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-82.8deg);
+  -moz-transform: rotate(-82.8deg);
+  -ms-transform: rotate(-82.8deg);
+  -o-transform: rotate(-82.8deg);
+  transform: rotate(-82.8deg);
+}
+.progress-circle[data-progress="26"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-86.4deg);
+  -moz-transform: rotate(-86.4deg);
+  -ms-transform: rotate(-86.4deg);
+  -o-transform: rotate(-86.4deg);
+  transform: rotate(-86.4deg);
+}
+.progress-circle[data-progress="25"] .quadrant-25-50-b {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.progress-circle[data-progress="24"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-3.6000000000000085deg);
+  -moz-transform: rotate(-3.6000000000000085deg);
+  -ms-transform: rotate(-3.6000000000000085deg);
+  -o-transform: rotate(-3.6000000000000085deg);
+  transform: rotate(-3.6000000000000085deg);
+}
+.progress-circle[data-progress="23"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-7.200000000000003deg);
+  -moz-transform: rotate(-7.200000000000003deg);
+  -ms-transform: rotate(-7.200000000000003deg);
+  -o-transform: rotate(-7.200000000000003deg);
+  transform: rotate(-7.200000000000003deg);
+}
+.progress-circle[data-progress="22"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-10.799999999999997deg);
+  -moz-transform: rotate(-10.799999999999997deg);
+  -ms-transform: rotate(-10.799999999999997deg);
+  -o-transform: rotate(-10.799999999999997deg);
+  transform: rotate(-10.799999999999997deg);
+}
+.progress-circle[data-progress="21"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-14.400000000000006deg);
+  -moz-transform: rotate(-14.400000000000006deg);
+  -ms-transform: rotate(-14.400000000000006deg);
+  -o-transform: rotate(-14.400000000000006deg);
+  transform: rotate(-14.400000000000006deg);
+}
+.progress-circle[data-progress="20"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-18deg);
+  -moz-transform: rotate(-18deg);
+  -ms-transform: rotate(-18deg);
+  -o-transform: rotate(-18deg);
+  transform: rotate(-18deg);
+}
+.progress-circle[data-progress="19"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-21.599999999999994deg);
+  -moz-transform: rotate(-21.599999999999994deg);
+  -ms-transform: rotate(-21.599999999999994deg);
+  -o-transform: rotate(-21.599999999999994deg);
+  transform: rotate(-21.599999999999994deg);
+}
+.progress-circle[data-progress="18"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-25.200000000000003deg);
+  -moz-transform: rotate(-25.200000000000003deg);
+  -ms-transform: rotate(-25.200000000000003deg);
+  -o-transform: rotate(-25.200000000000003deg);
+  transform: rotate(-25.200000000000003deg);
+}
+.progress-circle[data-progress="17"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-28.799999999999997deg);
+  -moz-transform: rotate(-28.799999999999997deg);
+  -ms-transform: rotate(-28.799999999999997deg);
+  -o-transform: rotate(-28.799999999999997deg);
+  transform: rotate(-28.799999999999997deg);
+}
+.progress-circle[data-progress="16"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-32.4deg);
+  -moz-transform: rotate(-32.4deg);
+  -ms-transform: rotate(-32.4deg);
+  -o-transform: rotate(-32.4deg);
+  transform: rotate(-32.4deg);
+}
+.progress-circle[data-progress="15"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-36deg);
+  -moz-transform: rotate(-36deg);
+  -ms-transform: rotate(-36deg);
+  -o-transform: rotate(-36deg);
+  transform: rotate(-36deg);
+}
+.progress-circle[data-progress="14"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-39.599999999999994deg);
+  -moz-transform: rotate(-39.599999999999994deg);
+  -ms-transform: rotate(-39.599999999999994deg);
+  -o-transform: rotate(-39.599999999999994deg);
+  transform: rotate(-39.599999999999994deg);
+}
+.progress-circle[data-progress="13"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-43.199999999999996deg);
+  -moz-transform: rotate(-43.199999999999996deg);
+  -ms-transform: rotate(-43.199999999999996deg);
+  -o-transform: rotate(-43.199999999999996deg);
+  transform: rotate(-43.199999999999996deg);
+}
+.progress-circle[data-progress="12"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-46.800000000000004deg);
+  -moz-transform: rotate(-46.800000000000004deg);
+  -ms-transform: rotate(-46.800000000000004deg);
+  -o-transform: rotate(-46.800000000000004deg);
+  transform: rotate(-46.800000000000004deg);
+}
+.progress-circle[data-progress="11"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-50.4deg);
+  -moz-transform: rotate(-50.4deg);
+  -ms-transform: rotate(-50.4deg);
+  -o-transform: rotate(-50.4deg);
+  transform: rotate(-50.4deg);
+}
+.progress-circle[data-progress="10"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-54deg);
+  -moz-transform: rotate(-54deg);
+  -ms-transform: rotate(-54deg);
+  -o-transform: rotate(-54deg);
+  transform: rotate(-54deg);
+}
+.progress-circle[data-progress="9"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-57.6deg);
+  -moz-transform: rotate(-57.6deg);
+  -ms-transform: rotate(-57.6deg);
+  -o-transform: rotate(-57.6deg);
+  transform: rotate(-57.6deg);
+}
+.progress-circle[data-progress="8"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-61.2deg);
+  -moz-transform: rotate(-61.2deg);
+  -ms-transform: rotate(-61.2deg);
+  -o-transform: rotate(-61.2deg);
+  transform: rotate(-61.2deg);
+}
+.progress-circle[data-progress="7"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-64.8deg);
+  -moz-transform: rotate(-64.8deg);
+  -ms-transform: rotate(-64.8deg);
+  -o-transform: rotate(-64.8deg);
+  transform: rotate(-64.8deg);
+}
+.progress-circle[data-progress="6"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-68.4deg);
+  -moz-transform: rotate(-68.4deg);
+  -ms-transform: rotate(-68.4deg);
+  -o-transform: rotate(-68.4deg);
+  transform: rotate(-68.4deg);
+}
+.progress-circle[data-progress="5"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-72deg);
+  -moz-transform: rotate(-72deg);
+  -ms-transform: rotate(-72deg);
+  -o-transform: rotate(-72deg);
+  transform: rotate(-72deg);
+}
+.progress-circle[data-progress="4"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-75.6deg);
+  -moz-transform: rotate(-75.6deg);
+  -ms-transform: rotate(-75.6deg);
+  -o-transform: rotate(-75.6deg);
+  transform: rotate(-75.6deg);
+}
+.progress-circle[data-progress="3"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-79.2deg);
+  -moz-transform: rotate(-79.2deg);
+  -ms-transform: rotate(-79.2deg);
+  -o-transform: rotate(-79.2deg);
+  transform: rotate(-79.2deg);
+}
+.progress-circle[data-progress="2"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-82.8deg);
+  -moz-transform: rotate(-82.8deg);
+  -ms-transform: rotate(-82.8deg);
+  -o-transform: rotate(-82.8deg);
+  transform: rotate(-82.8deg);
+}
+.progress-circle[data-progress="1"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-86.4deg);
+  -moz-transform: rotate(-86.4deg);
+  -ms-transform: rotate(-86.4deg);
+  -o-transform: rotate(-86.4deg);
+  transform: rotate(-86.4deg);
+}
+.progress-circle[data-progress="0"] .quadrant-0-25-b {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.progress-circle[data-progress="100"] .quadrant-0-25-b, .progress-circle[data-progress="100"] .quadrant-25-50-b, .progress-circle[data-progress="100"] .quadrant-50-75-b, .progress-circle[data-progress="99"] .quadrant-0-25-b, .progress-circle[data-progress="99"] .quadrant-25-50-b, .progress-circle[data-progress="99"] .quadrant-50-75-b, .progress-circle[data-progress="98"] .quadrant-0-25-b, .progress-circle[data-progress="98"] .quadrant-25-50-b, .progress-circle[data-progress="98"] .quadrant-50-75-b, .progress-circle[data-progress="97"] .quadrant-0-25-b, .progress-circle[data-progress="97"] .quadrant-25-50-b, .progress-circle[data-progress="97"] .quadrant-50-75-b, .progress-circle[data-progress="96"] .quadrant-0-25-b, .progress-circle[data-progress="96"] .quadrant-25-50-b, .progress-circle[data-progress="96"] .quadrant-50-75-b, .progress-circle[data-progress="95"] .quadrant-0-25-b, .progress-circle[data-progress="95"] .quadrant-25-50-b, .progress-circle[data-progress="95"] .quadrant-50-75-b, .progress-circle[data-progress="94"] .quadrant-0-25-b, .progress-circle[data-progress="94"] .quadrant-25-50-b, .progress-circle[data-progress="94"] .quadrant-50-75-b, .progress-circle[data-progress="93"] .quadrant-0-25-b, .progress-circle[data-progress="93"] .quadrant-25-50-b, .progress-circle[data-progress="93"] .quadrant-50-75-b, .progress-circle[data-progress="92"] .quadrant-0-25-b, .progress-circle[data-progress="92"] .quadrant-25-50-b, .progress-circle[data-progress="92"] .quadrant-50-75-b, .progress-circle[data-progress="91"] .quadrant-0-25-b, .progress-circle[data-progress="91"] .quadrant-25-50-b, .progress-circle[data-progress="91"] .quadrant-50-75-b, .progress-circle[data-progress="90"] .quadrant-0-25-b, .progress-circle[data-progress="90"] .quadrant-25-50-b, .progress-circle[data-progress="90"] .quadrant-50-75-b, .progress-circle[data-progress="89"] .quadrant-0-25-b, .progress-circle[data-progress="89"] .quadrant-25-50-b, .progress-circle[data-progress="89"] .quadrant-50-75-b, .progress-circle[data-progress="88"] .quadrant-0-25-b, .progress-circle[data-progress="88"] .quadrant-25-50-b, .progress-circle[data-progress="88"] .quadrant-50-75-b, .progress-circle[data-progress="87"] .quadrant-0-25-b, .progress-circle[data-progress="87"] .quadrant-25-50-b, .progress-circle[data-progress="87"] .quadrant-50-75-b, .progress-circle[data-progress="86"] .quadrant-0-25-b, .progress-circle[data-progress="86"] .quadrant-25-50-b, .progress-circle[data-progress="86"] .quadrant-50-75-b, .progress-circle[data-progress="85"] .quadrant-0-25-b, .progress-circle[data-progress="85"] .quadrant-25-50-b, .progress-circle[data-progress="85"] .quadrant-50-75-b, .progress-circle[data-progress="84"] .quadrant-0-25-b, .progress-circle[data-progress="84"] .quadrant-25-50-b, .progress-circle[data-progress="84"] .quadrant-50-75-b, .progress-circle[data-progress="83"] .quadrant-0-25-b, .progress-circle[data-progress="83"] .quadrant-25-50-b, .progress-circle[data-progress="83"] .quadrant-50-75-b, .progress-circle[data-progress="82"] .quadrant-0-25-b, .progress-circle[data-progress="82"] .quadrant-25-50-b, .progress-circle[data-progress="82"] .quadrant-50-75-b, .progress-circle[data-progress="81"] .quadrant-0-25-b, .progress-circle[data-progress="81"] .quadrant-25-50-b, .progress-circle[data-progress="81"] .quadrant-50-75-b, .progress-circle[data-progress="80"] .quadrant-0-25-b, .progress-circle[data-progress="80"] .quadrant-25-50-b, .progress-circle[data-progress="80"] .quadrant-50-75-b, .progress-circle[data-progress="79"] .quadrant-0-25-b, .progress-circle[data-progress="79"] .quadrant-25-50-b, .progress-circle[data-progress="79"] .quadrant-50-75-b, .progress-circle[data-progress="78"] .quadrant-0-25-b, .progress-circle[data-progress="78"] .quadrant-25-50-b, .progress-circle[data-progress="78"] .quadrant-50-75-b, .progress-circle[data-progress="77"] .quadrant-0-25-b, .progress-circle[data-progress="77"] .quadrant-25-50-b, .progress-circle[data-progress="77"] .quadrant-50-75-b, .progress-circle[data-progress="76"] .quadrant-0-25-b, .progress-circle[data-progress="76"] .quadrant-25-50-b, .progress-circle[data-progress="76"] .quadrant-50-75-b, .progress-circle[data-progress="75"] .quadrant-0-25-b, .progress-circle[data-progress="75"] .quadrant-25-50-b, .progress-circle[data-progress="75"] .quadrant-50-75-b, .progress-circle[data-progress="74"] .quadrant-0-25-b, .progress-circle[data-progress="74"] .quadrant-25-50-b, .progress-circle[data-progress="73"] .quadrant-0-25-b, .progress-circle[data-progress="73"] .quadrant-25-50-b, .progress-circle[data-progress="72"] .quadrant-0-25-b, .progress-circle[data-progress="72"] .quadrant-25-50-b, .progress-circle[data-progress="71"] .quadrant-0-25-b, .progress-circle[data-progress="71"] .quadrant-25-50-b, .progress-circle[data-progress="70"] .quadrant-0-25-b, .progress-circle[data-progress="70"] .quadrant-25-50-b, .progress-circle[data-progress="69"] .quadrant-0-25-b, .progress-circle[data-progress="69"] .quadrant-25-50-b, .progress-circle[data-progress="68"] .quadrant-0-25-b, .progress-circle[data-progress="68"] .quadrant-25-50-b, .progress-circle[data-progress="67"] .quadrant-0-25-b, .progress-circle[data-progress="67"] .quadrant-25-50-b, .progress-circle[data-progress="66"] .quadrant-0-25-b, .progress-circle[data-progress="66"] .quadrant-25-50-b, .progress-circle[data-progress="65"] .quadrant-0-25-b, .progress-circle[data-progress="65"] .quadrant-25-50-b, .progress-circle[data-progress="64"] .quadrant-0-25-b, .progress-circle[data-progress="64"] .quadrant-25-50-b, .progress-circle[data-progress="63"] .quadrant-0-25-b, .progress-circle[data-progress="63"] .quadrant-25-50-b, .progress-circle[data-progress="62"] .quadrant-0-25-b, .progress-circle[data-progress="62"] .quadrant-25-50-b, .progress-circle[data-progress="61"] .quadrant-0-25-b, .progress-circle[data-progress="61"] .quadrant-25-50-b, .progress-circle[data-progress="60"] .quadrant-0-25-b, .progress-circle[data-progress="60"] .quadrant-25-50-b, .progress-circle[data-progress="59"] .quadrant-0-25-b, .progress-circle[data-progress="59"] .quadrant-25-50-b, .progress-circle[data-progress="58"] .quadrant-0-25-b, .progress-circle[data-progress="58"] .quadrant-25-50-b, .progress-circle[data-progress="57"] .quadrant-0-25-b, .progress-circle[data-progress="57"] .quadrant-25-50-b, .progress-circle[data-progress="56"] .quadrant-0-25-b, .progress-circle[data-progress="56"] .quadrant-25-50-b, .progress-circle[data-progress="55"] .quadrant-0-25-b, .progress-circle[data-progress="55"] .quadrant-25-50-b, .progress-circle[data-progress="54"] .quadrant-0-25-b, .progress-circle[data-progress="54"] .quadrant-25-50-b, .progress-circle[data-progress="53"] .quadrant-0-25-b, .progress-circle[data-progress="53"] .quadrant-25-50-b, .progress-circle[data-progress="52"] .quadrant-0-25-b, .progress-circle[data-progress="52"] .quadrant-25-50-b, .progress-circle[data-progress="51"] .quadrant-0-25-b, .progress-circle[data-progress="51"] .quadrant-25-50-b, .progress-circle[data-progress="50"] .quadrant-0-25-b, .progress-circle[data-progress="50"] .quadrant-25-50-b, .progress-circle[data-progress="49"] .quadrant-0-25-b, .progress-circle[data-progress="48"] .quadrant-0-25-b, .progress-circle[data-progress="47"] .quadrant-0-25-b, .progress-circle[data-progress="46"] .quadrant-0-25-b, .progress-circle[data-progress="45"] .quadrant-0-25-b, .progress-circle[data-progress="44"] .quadrant-0-25-b, .progress-circle[data-progress="43"] .quadrant-0-25-b, .progress-circle[data-progress="42"] .quadrant-0-25-b, .progress-circle[data-progress="41"] .quadrant-0-25-b, .progress-circle[data-progress="40"] .quadrant-0-25-b, .progress-circle[data-progress="39"] .quadrant-0-25-b, .progress-circle[data-progress="38"] .quadrant-0-25-b, .progress-circle[data-progress="37"] .quadrant-0-25-b, .progress-circle[data-progress="36"] .quadrant-0-25-b, .progress-circle[data-progress="35"] .quadrant-0-25-b, .progress-circle[data-progress="34"] .quadrant-0-25-b, .progress-circle[data-progress="33"] .quadrant-0-25-b, .progress-circle[data-progress="32"] .quadrant-0-25-b, .progress-circle[data-progress="31"] .quadrant-0-25-b, .progress-circle[data-progress="30"] .quadrant-0-25-b, .progress-circle[data-progress="29"] .quadrant-0-25-b, .progress-circle[data-progress="28"] .quadrant-0-25-b, .progress-circle[data-progress="27"] .quadrant-0-25-b, .progress-circle[data-progress="26"] .quadrant-0-25-b, .progress-circle[data-progress="25"] .quadrant-0-25-b {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.progress-circle-small {
+  width: 50px;
+  height: 50px;
+}
+.progress-circle-small .progress-circle-bg,
+.progress-circle-small .bar {
+  border-width: 5px;
+}
+.progress-circle-small .text {
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+.progress-circle-medium {
+  width: 100px;
+  height: 100px;
+}
+.progress-circle-medium .progress-circle-bg,
+.progress-circle-medium .bar {
+  border-width: 10px;
+}
+.progress-circle-medium .text {
+  padding: 20px 0;
+  font-size: 28px;
+  line-height: 40px;
+}
+.progress-circle-large {
+  width: 150px;
+  height: 150px;
+}
+.progress-circle-large .progress-circle-bg,
+.progress-circle-large .bar {
+  border-width: 15px;
+}
+.progress-circle-large .text {
+  padding: 30px 0;
+  font-size: 42px;
+  line-height: 60px;
+}
